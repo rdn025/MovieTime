@@ -1,0 +1,20 @@
+.cbg{
+     background-color: midnightblue;
+     color: white;
+  }
+  .qte{
+    text-align: center;
+    color:white;
+  }
+  .adrs li{
+      display: flex;
+      justify-content:center;
+      align-items:center;
+      padding-bottom: 12px;
+  }
+  .adrs li i{
+    font-size: 20px;
+  }
+
+
+  /* url("./assets/images/tnkng.jpg")  */

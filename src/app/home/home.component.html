@@ -1,0 +1,96 @@
+<header></header>
+<main role="main">
+    <div>
+            <section class="jumbotron text-center"  style="background-image: url(./assets/images/cinema-hall.jpg);height: 320px;">
+            
+            </section>
+        </div>
+    
+            <div class="album py-5 bg-light" *ngIf="!res">
+                <div class="container">
+    
+                    <div class="row">
+                        <div class="col-md-4"  *ngFor="let det of movies">
+                            <div class="card mb-4 box-shadow new">
+                                <img class="card-img-top" src="assets/images/{{det.image}}.jpg" alt="Card image cap">
+                                <div class="card-body" style="position: relative;">
+                                    <h4><b>Name: {{det.movieName}}</b> </h4>
+                                    <h5>Language : {{det.language}}</h5>
+                                    <h5>Price: {{det.amount}}</h5>
+                                    <p class="card-text">{{det.description}}</p>
+                                    <div class="d-flex justify-content-between align-items-center m-3" style="position: absolute;left: 0;bottom: 0;width: 90%;" >
+                                        <ng-container *ngIf="isLoggedIn; else newButton">
+                                            <button class="btn" type="submit" (click)="book(det.movieId)"  style="background-color: #343a40;color: white">Book</button>
+                                              </ng-container>
+                                              <ng-template #newButton>
+                                                <ng-container *ngIf="temp; else loginButton">
+                                                    <button class="btn" type="submit" (click)="update(det.movieId)"  style="background-color: #343a40;color: white">Update</button>
+                                                    <button class="btn" type="submit" (click)="delete(det.movieId)"  style="background-color: #343a40;color: white">Delete</button>
+                                                    </ng-container>
+                                                    <ng-template #loginButton>
+                                                <button class="btn" style="background-color: #343a40">
+                                                    <a routerLink="/login" style="text-decoration: none;color: white;">Book Ticket</a>
+                                                </button>
+                                            </ng-template>
+                                        </ng-template>
+                                       
+                                        <small class="text-muted" style="float: right;">3 hrs</small>
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+
+
+
+                    </div>
+                </div>
+            </div>
+    
+
+            <div class="album py-5 bg-light" *ngIf="res">
+                <div class="container">
+    
+                    <div class="row">
+                        <div class="col-md-4"  *ngFor="let list of movieList">
+                            <div class="card mb-4 box-shadow new">
+                                <img class="card-img-top" src="assets/images/{{list.image}}.jpg" alt="Card image cap">
+                                <div class="card-body" style="position: relative;">
+                                    <h4><b>Name: {{list.movieName}}</b> </h4>
+                                    <h5>Language : {{list.language}}</h5>
+                                    <h5>Price: {{list.amount}}</h5>
+                                    <p class="card-text">{{list.description}}</p>
+                                    <div class="d-flex justify-content-between align-items-center m-3" style="position: absolute;left: 0;bottom: 0;width: 90%;" >
+                                        <ng-container *ngIf="isLoggedIn; else newButton">
+                                            <button class="btn" type="submit" (click)="book(list.movieId)"  style="background-color: #343a40;color: white">Book</button>
+                                              </ng-container>
+                                              <ng-template #newButton>
+                                                <ng-container *ngIf="temp; else loginButton">
+                                                    <button class="btn" type="submit" (click)="update(list.movieId)"  style="background-color: #343a40;color: white">Update</button>
+                                                    <button class="btn" type="submit" (click)="delete(list.movieId)"  style="background-color: #343a40;color: white">Delete</button>
+                                                    </ng-container>
+                                                    <ng-template #loginButton>
+                                                <button class="btn" style="background-color: #343a40">
+                                                    <a routerLink="/login" style="text-decoration: none;color: white;">Book Ticket</a>
+                                                </button>
+                                            </ng-template>
+                                        </ng-template>
+                                       
+                                        <small class="text-muted" style="float: right;">3 hrs</small>
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+
+
+
+                    </div>
+                </div>
+            </div>
+    
+        </main>
+
+        <footer></footer>
+
+        
